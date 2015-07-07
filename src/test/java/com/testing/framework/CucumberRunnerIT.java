@@ -8,12 +8,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
+//mvn clean -Pintegration-tests verify -Dcucumber.options="--tags @run"
+
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumber", "json:target/cucumber.json"},
         features = "classpath:com/testing/framework/features",
         glue = "classpath:com.testing.framework",
-        tags = "@driver"
+        tags = "~@FAKE_TAG"
 )
 public class CucumberRunnerIT {
 
